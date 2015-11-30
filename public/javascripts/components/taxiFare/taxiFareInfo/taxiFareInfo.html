@@ -1,0 +1,44 @@
+<div class="container">
+    <h1>Taxi Ride Info</h1>
+
+    <table class="table">
+        <tr>
+            <th>Entry Fare</th>
+            <td>{{taxiFareObject.entry | currency:"GBP£ "}}</td>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <td>{{taxiFareObject.date | date:'medium'}}</td>
+        </tr>
+        <tr>
+            <th>Miles traveled below 6 mph fare</th>
+            <td>{{taxiFareObject.milesBelowLimitFare | currency:"GBP£ "}}</td>
+        </tr>
+        <tr>
+            <th>Minutes above 12 mph fare</th>
+            <td>{{taxiFareObject.minutesAboveLimitFare | currency:"GBP£ "}}</td>
+        </tr>
+        <tr>
+            <th>City Fare</th>
+            <td>{{taxiFareObject.cityFare | currency:"GBP£ "}}</td>
+        </tr>
+        <tr>
+            <th>Night Surcharge</th>
+            <td>{{taxiFareObject.nightSurcharge | currency:"GBP£ "}}</td>
+        </tr>
+        <tr>
+            <th>Peak Hour Weekday Surcharge</th>
+            <td>{{taxiFareObject.peakTimeSurcharge | currency:"GBP£ "}}</td>
+        </tr>
+
+        <tr>
+            <th>TOTAL</th>
+            <td>{{taxiFareObject.entry +
+                taxiFareObject.milesBelowLimitFare +
+                taxiFareObject.minutesAboveLimitFare +
+                taxiFareObject.cityFare +
+                taxiFareObject.nightSurcharge+
+                taxiFareObject.peakTimeSurcharge | currency:"GBP£ "}}</td>
+        </tr>
+    </table>
+</div>
